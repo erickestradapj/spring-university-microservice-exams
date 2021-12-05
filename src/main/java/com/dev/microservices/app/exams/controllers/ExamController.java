@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ExamController extends CommonController<Exam, ExamService> {
 
     @PutMapping("/{id}")
-    ResponseEntity<?> edit(@Valid @RequestBody Exam exam, BindingResult result, @PathVariable Long id) {
+    public ResponseEntity<?> edit(@Valid @RequestBody Exam exam, BindingResult result, @PathVariable Long id) {
 
         if (result.hasErrors()) {
             return this.validate(result);
